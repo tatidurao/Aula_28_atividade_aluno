@@ -168,12 +168,7 @@ function showBoats() {
 
       boats[i].display();
       boats[i].animate();
-      var collision = Matter.SAT.collides(this.tower, boats[i].body);
-      if (collision.collided && !boats[i].isBroken) {
-        isGameOver = true;
-        gameOver();
-      }
-    }
+     }
   } else {
     var boat = new Boat(width, height - 60, 170, 170, -60, boatAnimation);
     boats.push(boat);
@@ -181,7 +176,7 @@ function showBoats() {
 }
 
 function keyReleased() {
-  if (keyCode === DOWN_ARROW && !isGameOver) {
+  if (keyCode === DOWN_ARROW) {
     balls[balls.length - 1].shoot();
   }
 }
